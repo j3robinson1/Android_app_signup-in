@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
+import android.view.View;
 
 
 public class Signinup extends ActionBarActivity {
@@ -12,6 +15,19 @@ public class Signinup extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signinup);
+
+        // declare our view variables
+        final TextView emailLabel = (TextView) findViewById(R.id.textView2);
+        Button showEmailButton = (Button) findViewById(R.id.new_text);
+        View.OnClickListener listener = new View.OnClickListener() {
+            public void onClick(View view) {
+                //update screen with email
+                String email = "First Event in android!";
+                emailLabel.setText(email);
+            }
+        };
+        showEmailButton.setOnClickListener(listener);
+
     }
 
     @Override
